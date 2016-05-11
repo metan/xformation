@@ -1,0 +1,58 @@
+@mixin linearGradient($startColor, $endColor) {
+	background: $startColor;
+	background: -moz-linear-gradient(top,  $startColor 0%, $endColor 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop(100%,$endColor));
+	background: -webkit-linear-gradient(top,  $startColor 0%, $endColor 100%);
+	background: -o-linear-gradient(top,  $startColor 0%, $endColor 100%);
+	background: -ms-linear-gradient(top,  $startColor 0%, $endColor 100%);
+	background: linear-gradient(to bottom,  $startColor 0%, $endColor 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin transition($transform) {
+	-webkit-transition: $transform;
+    -moz-transition: $transform;
+    -ms-transition: $transform;
+    transition: $transform;
+}
+
+@mixin transform($transform) {
+	-moz-transform: $transform;
+	-webkit-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;
+}
+
+@mixin animation($animation) {
+	-moz-animation: $animation;
+	-webkit-animation: $animation;
+	-ms-animation: $animation;
+	animation: $animation;
+}
+
+@mixin colSpec($boxPerRow, $margin) {
+	width: calc((100% - (#{$boxPerRow} - 1) * #{$margin}) / #{$boxPerRow});
+	margin-right: $margin;
+	float: left;
+	&:nth-child(n) {
+		margin-right: $margin;
+	}
+	&:nth-child(#{$boxPerRow}n) {
+		margin-right: 0;
+	}
+}

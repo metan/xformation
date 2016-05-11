@@ -1,0 +1,11 @@
+@mixin respond-to($point) {
+	@if $point == 'small-mobile' {
+        @media screen and (max-width: 400px) { @content; }
+    }
+    @if $point == 'mobile' {
+        @media screen and (max-width: 768px) { @content; }
+    }
+    @else if $point == 'md-screen' {
+        @media screen and (max-width: 1180px) { @content; }
+    }
+}

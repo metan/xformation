@@ -1,0 +1,66 @@
+body {
+	color: #222;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+address {
+	font-style: normal;
+}
+
+.container {
+	width: 1180px;
+	max-width: 90%;
+	margin: 50px auto;
+	overflow: hidden;
+	h2 {
+		font-size: 30px;
+		padding: 20px 0;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	@include respond-to("small-mobile") {
+		h1 {
+			font-size: 30px;
+		}
+		h2 {
+			font-size: 25px;
+		}
+	}
+}
+
+.row {
+	overflow: hidden;
+	.col {
+		width: 48%;
+		float: right;
+		line-height: 1.5;
+	}
+	.col:first-child {
+		float: left;
+	}
+	.col-3 {
+		@include colSpec(4, 5%);
+		line-height: 1.4;
+	}
+	.col-4 {
+		@include colSpec(3, 5%);
+		line-height: 1.4;
+	}
+	.image {
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	h3 {
+		font-size: 23px;
+		padding-bottom: 20px;
+	}
+	strong {
+		font-weight: 600;
+	}
+}

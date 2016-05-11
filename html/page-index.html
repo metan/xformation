@@ -1,0 +1,66 @@
+@@include('./partials/header.html', {
+	"bodyClassName": "homepage"
+})
+
+<div class="container">
+	<h1>X-Formation Github Statistics</h1>
+	<h2>Repositories</h2>
+
+	<table id="repositories-list">
+		<thead>
+			<tr>
+				<th>Repository</th>
+				<th>Stargazers</th>
+				<th>Watchers</th>
+				<th>Forks</th>
+			</tr>
+		</thead>
+		<tbody>
+			<script id="repositoriesTemplate"  type="x-tmpl-mustache">
+				{{#.}}
+				<tr>
+					<td>{{name}}</td>
+					<td>{{stargazers_count}}</td>
+					<td>{{watchers_count}}</td>
+					<td>{{forks_count}}</td>
+				</tr>
+				{{/.}}
+			</script> 
+		</tbody>
+	</table>
+
+	<div class="loading"><img src="img/loader.gif" alt="Loading..." /></div>
+
+
+	<h2>Contributors</h2>
+
+	<table id="contributors-list">
+		<thead>
+			<tr>
+				<th>Nickname</th>
+				<th>Team</th>
+				<th>Contributions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<script id="contributorsTemplate"  type="x-tmpl-mustache">
+				{{#.}}
+				<tr>
+					<td>{{nickname}}</td>
+					<td>{{team}}</td>
+					<td>{{contributions}}</td>
+				</tr>
+				{{/.}}
+			</script> 
+		</tbody>
+	</table>
+
+	<div class="loading"><img src="img/loader.gif" alt="Loading..." /></div>
+</div>
+
+
+
+@@include('./partials/footer.html', {
+	"bodyClassName": "homepage"
+}) 
+ 
